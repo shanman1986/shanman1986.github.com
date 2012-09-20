@@ -1,0 +1,20 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #EEE;
+}
+#page-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: x-small;
+	color: #CCC;
+}
+#page-footer p {
+	text-align: center;
+}
+
+*[role='main'] {
+	padding-left: 2em;
+}
