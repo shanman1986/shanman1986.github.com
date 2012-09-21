@@ -18,3 +18,7 @@ body {
 *[role='main'] {
 	padding-left: 2em;
 }
+
+#post h1 {
+	padding-left: 2em;
+}
