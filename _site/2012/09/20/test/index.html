@@ -6,21 +6,38 @@
     <meta name='author' content='John Shanley' />
     <link rel='stylesheet' type='text/css' href='/stylesheets/base.css'>
     <title>This is a test</title>
+    <script type='text/javascript' src='http://d3js.org/d3.v2.min.js'></script>
   </head>
   <body>
-    <header>
+    <header id='page-header'>
       <h1><a href='/'>This is a test</a></h1>
     </header>
     <section role='main'>
       <div class='content'>
   <div id='post'>
     <h1></h1>
-    <h2>Test Post</h2>
+    <div id='chart'>
+	    <script>
+    var vis = d3.select('#chart').append('svg:svg')
+        .attr('width', '100%')
+        .attr('height', '100%')
+        .attr('viewBox', '0 0 800 500')
+        .attr('preserveAspectRatio', 'xMidYMid meet');
 
-<p><strong>bold</strong> <em>italic</em></p>
+    var data = [1, 8, 4, 7, 10];
 
-<blockquote><p>blockquote</p></blockquote>
+    var dot = d3.selectAll('.dot')
+        .data(data)
+        .enter().append('svg:circle')
+        .attr('r', function(d){return d*2})
+        .attr('cx', function(d,i){return i * (800 / data.length)})
+        .attr('cy', 250)
+        .attr('fill', 'steelblue')
+        .attr('stroke', '#333');
+</script>
 
+
+	</div>
   </div>
 </div>
 

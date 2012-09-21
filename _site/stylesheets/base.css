@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #EEE;
+	font: normal 100% 'Helvetica Neue', Helvetica, sans-serif;
 }
 #page-footer {
 	position: absolute;
@@ -16,9 +17,24 @@ body {
 }
 
 *[role='main'] {
-	padding-left: 2em;
+	background-color: #FFF;
 }
 
-#post h1 {
-	padding-left: 2em;
+#page-header {
+	padding-left: 1em;
+}
+
+#page-header a {
+	text-decoration: none;
+	color: #333;
+}
+#page-header a:hover {
+	color: #555;
+}
+
+#chart {
+	border: 1px solid #333;
+	width: 80%;
+	height: 400px;
+	margin: 0 auto;
 }
