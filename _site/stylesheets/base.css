@@ -5,7 +5,7 @@ body {
 	font: normal 100% 'Helvetica Neue', Helvetica, sans-serif;
 }
 #page-footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
@@ -17,7 +17,7 @@ body {
 }
 
 *[role='main'] {
-	background-color: #FFF;
+	background-color: inherit;
 }
 
 #page-header {
@@ -33,7 +33,9 @@ body {
 }
 
 #chart {
+	background-color: #FFF;
 	border: 1px solid #333;
+	border-radius: 7px;
 	width: 80%;
 	height: 400px;
 	margin: 0 auto;

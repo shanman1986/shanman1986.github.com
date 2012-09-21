@@ -5,12 +5,12 @@
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
     <meta name='author' content='John Shanley' />
     <link rel='stylesheet' type='text/css' href='/stylesheets/base.css'>
-    <title>This is a test</title>
+    <title>Pollster slug chart</title>
     <script type='text/javascript' src='http://d3js.org/d3.v2.min.js'></script>
   </head>
   <body>
     <header id='page-header'>
-      <h1><a href='/'>This is a test</a></h1>
+      <h1><a href='/'>Pollster slug chart</a></h1>
     </header>
     <section role='main'>
       <div class='content'>
@@ -18,25 +18,10 @@
     <h1></h1>
     <div id='chart'>
 	    <script>
-    document.body.onload = function(){
-        var vis = d3.select('#chart').append('svg:svg')
-            .attr('width', '100%')
-            .attr('height', '100%')
-            .attr('viewBox', '0 0 800 500')
-            .attr('preserveAspectRatio', 'xMidYMid meet');
-
-        var data = [1, 8, 4, 7, 10];
-
-        var dot = vis.selectAll('.dot')
-            .data(data)
-            .enter().append('svg:circle')
-            .attr('class', 'dot')
-            .attr('r', function(d){return d*2})
-            .attr('cx', function(d,i){return i * (800 / (data.length-1))})
-            .attr('cy', 250)
-            .attr('fill', 'steelblue')
-            .attr('stroke', '#333');
-    }
+    var testURL = 'http://elections.huffingtonpost.com/pollster/api/charts.json';
+    d3.json(testURL, function(json){
+        console.log(json);
+    });
 </script>
 
 
