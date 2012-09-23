@@ -43,7 +43,7 @@ pre code {
 
 *[role='main'] {
 	background-color: inherit;
-	padding: 20px;
+	padding: 0 20px;
 }
 
 #page-header {
