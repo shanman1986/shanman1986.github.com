@@ -39,7 +39,7 @@ Finally, in order to use the data from the response, you must define a function 
 Here's a simple example of what this might look like in practice:
 
 <p><pre><code>var API_SERVER = 'http://elections.huffingtonpost.com',
-	API_BASE = '/pollster/api',
+	API_BASE = '/pollster/api/',
 	API_FILE = 'polls.json',
 	callback = '?callback=pollsterPoll',
 	params = '&state=NY&topic=2012-president',
