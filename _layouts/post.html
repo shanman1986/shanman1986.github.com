@@ -8,15 +8,5 @@ layout: layout
     <div id='chart'>
 	    {{ content }}
 	</div>
-	<script type='text/javascript'>
-		window.onresize = function(){
-			resizeChart();
-		}
-		function resizeChart(){
-			var winHt = window.innerHeight,
-				newHt = winHt - 100;				
-			document.getElementById('chart').style.height = newHt + 'px';
-		}
-	</script>
   </div>
 </div>
