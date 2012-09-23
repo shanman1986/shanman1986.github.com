@@ -67,7 +67,7 @@ window.pollsterPoll = function(incoming_data){
     visualize();
 };
 
-$document.ready(function(){
+$(document).ready(function(){
     $.ajax({
         url: API_SERVER + API_BASE + API_FILE + callback + params,
         dataType: 'script',
