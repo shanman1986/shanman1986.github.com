@@ -1,0 +1,97 @@
+body {
+	font: normal 100% 'Helvetica Neue', Helvetica, sans-serif;
+	padding-left: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: steelblue;
+}
+a:hover {
+	color: #ACB;
+}
+
+.poll-box-wrapper {
+	display: block;
+}
+.poll-box {
+	display: inline-block;
+	background-color: #EEE;
+	border: 3px solid #999;
+	padding: 10px;
+	margin: 10px;
+}
+.question {
+	margin-top: 10px;
+	border: 1px solid #555;
+	background-color: #555;
+}
+.question header {
+	padding: 5px;
+	color: #FFF;
+}
+.subpop {
+	background-color: #AAA;
+	text-align: center;
+}
+.subpop header {
+	background-color: #999;
+	font-size: 0.75em;
+	padding: 5px;
+	color: #333;
+	text-align: left;
+}
+.cat-title {
+	font-size: 0.75em;
+	color: #777;
+}
+.cat-pollster {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+.quest-num {
+	color: #DDD;
+	font-size: 0.625em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.response-vis {
+	background-color: #EEE;
+	margin: 10px;
+	border: 1px solid #333;
+}
+
+.response-value-label {
+	font-size: 12px;
+}
+.response-choice-label {
+	font-size: 10px;
+}
+
+
+
+.cal-cal {
+	display: inline-block;
+	border: 1px solid #555;
+	text-align: center;
+	width: 50px;
+}
+.cal-month {
+	display: block;
+	background-color: red;
+	color: white;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+.cal-date {
+	display: block;
+	background-color: #FFF;
+	color: #333;
+	font-size: 22px;
+}
+
+#attribution {
+	font-size: 0.75em;
+	color: #555;
+}
