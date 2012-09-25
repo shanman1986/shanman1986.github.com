@@ -1,6 +1,7 @@
 body {
 	font: normal 100% 'Helvetica Neue', Helvetica, sans-serif;
-	padding-left: 10px;
+	padding: 0;
+	margin: 0;
 }
 
 a {
@@ -11,8 +12,24 @@ a:hover {
 	color: #ACB;
 }
 
+*[role='main'] {
+	margin-left: 20px;
+}
+
+.response-obj {
+	display: block;
+	margin: 0;
+	padding: 5px 0 0 10px;
+}
+
 .poll-box-wrapper {
 	display: block;
+}
+.poll-box-wrapper:nth-child(odd){
+	border-left: 16px solid #555;
+}
+.poll-box-wrapper:nth-child(even){
+	border-left: 16px solid #AAA;
 }
 .poll-box {
 	display: inline-block;

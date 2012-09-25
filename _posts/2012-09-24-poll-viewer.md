@@ -4,7 +4,9 @@ layout: polls
 
 #Pollster API: Poll Viewer
 
-Enter your parameters to view the polls returned from the API:
+This tool will let you check the results of an API request quickly and easily.
+
+Enter your parameters below to view the polls returned from the API:
 
 <code>http://elections.huffingtonpost.com/pollster/api/polls.json?</code><input id='input-params' type='text' /><input type='submit' value='fetch' onclick='fetch()' />
 
@@ -60,34 +62,40 @@ Enter your parameters to view the polls returned from the API:
 		var view = d3.select('#output');
 		var boxes = view.selectAll('.poll-box').data(latest_data);
 
-		var boxEnter = boxes.enter().append('div').attr('class', 'poll-box-wrapper').append('div')
-			.attr('class', 'poll-box')
-			.html(function(d){
-				var start = '<span class="cat-title">start_date:</span> ' + format.parse(d.start_date).toDateString().makeCal(),
-					end = ' <span class="cat-title">end_date:</span> ' + format.parse(d.end_date).toDateString().makeCal() + '<br />',
-					method = '<span class="cat-title">method:</span> <span class="cat-method">' + d.method + '</span><br /><br />',
-					pollster = '<span class="cat-title">pollster:</span> <span class="cat-pollster">' + d.pollster + '</span><br />',
-					wrapper = '<div class="questions-wrapper"></div>',
-					source = '<div class="cat-source">source: <a href="' + d.source + '">' + d.source + '</a></div>';
-
-				return pollster + method + start + end + wrapper + source;
+		var boxEnter = boxes.enter().append('div')
+			.attr('class', 'poll-box-wrapper')
+			.html(function(d,i){
+				var counter = '<h3 class="response-obj">response[' + i + ']</h3>';
+				return counter;
 			})
-			.select('.questions-wrapper').selectAll('.question').data(function(d){return d.questions})
-				.enter().append('div')
-					.attr('class', 'question')
+				.append('div')
+					.attr('class', 'poll-box')
 					.html(function(d,i){
-						var question_number = i + 1,
-							question = d.name,
-							header = '<span class="quest-num">Question ' + question_number + ':</span> ' + question;
-						return '<header>' + header + '</header>'
+						var start = '<span class="cat-title">start_date:</span> ' + format.parse(d.start_date).toDateString().makeCal(),
+							end = ' <span class="cat-title">end_date:</span> ' + format.parse(d.end_date).toDateString().makeCal() + '<br />',
+							method = '<span class="cat-title">method:</span> <span class="cat-method">' + d.method + '</span><br /><br />',
+							pollster = '<span class="cat-title">pollster:</span> <span class="cat-pollster">' + d.pollster + '</span><br />',
+							wrapper = '<div class="questions-wrapper"></div>',
+							source = '<div class="cat-source">source: <a href="' + d.source + '">' + d.source + '</a></div>';
+
+						return pollster + method + start + end + wrapper + source;
 					})
-					.selectAll('.subpop').data(function(d){return d.subpopulations})
+					.select('.questions-wrapper').selectAll('.question').data(function(d){return d.questions})
 						.enter().append('div')
-							.attr('class', 'subpop')
-							.html(function(d){
-								var header = 'Sample: <span class="obs-num">'+ d.observations + '</span> ' + d.name;
-								return '<header>' + header + '</header>';
-							});
+							.attr('class', 'question')
+							.html(function(d,i){
+								var question_number = i + 1,
+									question = d.name,
+									header = '<span class="quest-num">Question ' + question_number + ':</span> ' + question;
+								return '<header>' + header + '</header>'
+							})
+							.selectAll('.subpop').data(function(d){return d.subpopulations})
+								.enter().append('div')
+									.attr('class', 'subpop')
+									.html(function(d){
+										var header = 'Sample: <span class="obs-num">'+ d.observations + '</span> ' + d.name;
+										return '<header>' + header + '</header>';
+									});
 
 		var graphEnter = boxEnter.append('svg:svg')
 			.attr('class', 'response-vis')
