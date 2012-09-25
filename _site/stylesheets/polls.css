@@ -19,6 +19,7 @@ a:hover {
 	background-color: #EEE;
 	border: 3px solid #999;
 	padding: 10px;
+	padding-bottom: 5px;
 	margin: 10px;
 }
 .question {
@@ -48,6 +49,12 @@ a:hover {
 .cat-pollster {
 	font-size: 1.25em;
 	font-weight: bold;
+}
+.cat-source {
+	clear: both;
+	font-size: 0.625em;
+	margin-top: 5px;
+	text-align: center;
 }
 .quest-num {
 	color: #DDD;

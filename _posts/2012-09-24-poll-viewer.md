@@ -63,14 +63,16 @@ Enter your parameters to view the polls returned from the API:
 		var boxEnter = boxes.enter().append('div').attr('class', 'poll-box-wrapper').append('div')
 			.attr('class', 'poll-box')
 			.html(function(d){
-				var start = '<span class="cat-title">start:</span> ' + format.parse(d.start_date).toDateString().makeCal(),
-					end = ' <span class="cat-title">end:</span> ' + format.parse(d.end_date).toDateString().makeCal() + '<br />',
+				var start = '<span class="cat-title">start_date:</span> ' + format.parse(d.start_date).toDateString().makeCal(),
+					end = ' <span class="cat-title">end_date:</span> ' + format.parse(d.end_date).toDateString().makeCal() + '<br />',
 					method = '<span class="cat-title">method:</span> <span class="cat-method">' + d.method + '</span><br /><br />',
-					pollster = '<span class="cat-title">pollster:</span> <span class="cat-pollster">' + d.pollster + '</span><br />';
+					pollster = '<span class="cat-title">pollster:</span> <span class="cat-pollster">' + d.pollster + '</span><br />',
+					wrapper = '<div class="questions-wrapper"></div>',
+					source = '<div class="cat-source">source: <a href="' + d.source + '">' + d.source + '</a></div>';
 
-				return pollster + method + start + end;
+				return pollster + method + start + end + wrapper + source;
 			})
-			.selectAll('.question').data(function(d){return d.questions})
+			.select('.questions-wrapper').selectAll('.question').data(function(d){return d.questions})
 				.enter().append('div')
 					.attr('class', 'question')
 					.html(function(d,i){
