@@ -45,7 +45,7 @@ Enter your parameters to view the polls returned from the API:
 	function fetch(){
 		var input_params = document.getElementById('input-params').value; 
 		$.ajax({
-			url: API_SERVER + API_BASE + API_FILE + callback + input_params,
+			url: API_SERVER + API_BASE + API_FILE + callback + '&' + input_params,
 			dataType: 'script',
 			type: 'GET',
 			cache: true
