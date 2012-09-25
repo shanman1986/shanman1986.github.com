@@ -57,7 +57,7 @@ Enter your parameters below to view the polls returned from the API:
 	function visualize(){
 
 		//clear old view
-		d3.select('#output').selectAll('.poll-box').remove();
+		d3.select('#output').selectAll('.poll-box-wrapper').remove();
 
 		var view = d3.select('#output');
 		var boxes = view.selectAll('.poll-box').data(latest_data);
