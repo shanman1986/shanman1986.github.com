@@ -4,7 +4,7 @@ layout: polls
 
 #Pollster API: Poll Viewer
 
-This tool will let you check the results of an API request quickly and easily.
+This tool will let you check the results of a request to the [Pollster API](http://elections.huffingtonpost.com/pollster/api) quickly and easily.
 
 Enter your parameters below to view the polls returned from the API:
 
@@ -135,9 +135,8 @@ Enter your parameters below to view the polls returned from the API:
 		var responseValueLabelEnter = graphEnter
 						.insert('svg:text')
 							.attr('class', 'response-value-label')
-							.attr('x', function(d,i){return bar_padding + (i * bar_width) + (2 * i * bar_padding)})
+							.attr('x', function(d,i){return bar_padding + (i * bar_width) + (2 * i * bar_padding) + (0.5 * bar_width)})
 							.attr('y', function(d){return scaleYUp(d.value)})
-							.attr('dx', ((1/2) * bar_width))
 							.attr('dy', -7)
 							.attr('text-anchor', 'middle')
 							.text(function(d){return d.value + '%'});
@@ -145,9 +144,8 @@ Enter your parameters below to view the polls returned from the API:
 		var responseChoiceLabelEnter = graphEnter
 						.insert('svg:text')
 							.attr('class', 'response-choice-label')
-							.attr('x', function(d,i){return bar_padding + (i * bar_width) + (2 * i * bar_padding)})
+							.attr('x', function(d,i){return bar_padding + (i * bar_width) + (2 * i * bar_padding) + (0.5 * bar_width)})
 							.attr('y', graph_height)
-							.attr('dx', ((1/2) * bar_width))
 							.attr('dy', label_padding - 5)
 							.attr('text-anchor', 'middle')
 							.text(function(d){return d.choice});	
