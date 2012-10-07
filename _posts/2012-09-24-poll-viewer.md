@@ -73,8 +73,8 @@ Enter your parameters below to view the polls returned from the API:
 					.html(function(d,i){
 						var start = '<span class="cat-title">start_date:</span> ' + format.parse(d.start_date).toDateString().makeCal(),
 							end = ' <span class="cat-title">end_date:</span> ' + format.parse(d.end_date).toDateString().makeCal() + '<br />',
-							method = '<span class="cat-title">method:</span> <span class="cat-method">' + d.method + '</span><br /><br />',
-							pollster = '<span class="cat-title">pollster:</span> <span class="cat-pollster">' + d.pollster + '</span><br />',
+							method = '<span class="cat-method">' + d.method + '</span><br /><br />',
+							pollster = '<span class="cat-pollster">' + d.pollster + '</span><br />',
 							wrapper = '<div class="questions-wrapper"></div>',
 							source = '<div class="cat-source">source: <a href="' + d.source + '">' + d.source + '</a></div>';
 
