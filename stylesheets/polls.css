@@ -67,6 +67,17 @@ a:hover {
 	font-size: 1.25em;
 	font-weight: bold;
 }
+.cat-pollster:before {
+	content: 'pollster: ';
+	font-size: 0.75em;
+	font-weight: normal;
+	color: #777;
+}
+.cat-method:before {
+	content: 'method: ';
+	font-size: 0.75em;
+	color: #777;
+}
 .cat-source {
 	clear: both;
 	font-size: 0.625em;
